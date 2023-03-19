@@ -1,0 +1,23 @@
+{% extends "course/base.html" %}
+
+
+{% block content %}
+
+{% for course in object_list %}
+
+        <div class="card text-center">
+            <h5 class="card-header">{{course.classname}}</h5>
+            <div class="card-body">
+            <h5 class="card-title">{{course.classnumber}}</h5>
+            <p class="card-text">{{course.summary | slice:': 50'}}</p>
+            <a href="{% url 'course-detail' course.pk %}" class="btn btn-primary">What I have learned </a>
+            </div>
+        </div>
+
+
+{% endfor %}
+
+{% endblock content %}
+
+
+
